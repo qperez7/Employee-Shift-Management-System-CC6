@@ -12,3 +12,12 @@ function displayEmployeeShifts (employees) {
     return employees.name, employees.shifts
 }
 console.log(displayEmployeeShifts(employees[0]));
+
+// Task 3: Create a Function to Assign a New Shift
+function assignShift(name,day,hours) {
+if(employees.some(name => employees.name === name && employees.day != day))
+    return name,day,hours
+else 
+return "error cannot assign"
+}
+console.log(employees.push(assignShift('John','Tuesday',3))) //Output: does not give proper output
