@@ -6,3 +6,9 @@
 { name: 'Emily', shifts: [{ day: 'Friday', hours: 8 }] }
 ];
 console.log(employees)
+
+// Task 2: Create a Function to Display Employee Shift Details
+function displayEmployeeShifts (employees) {
+    return employees.name, employees.shifts
+}
+console.log(displayEmployeeShifts(employees[0]));
