@@ -15,19 +15,29 @@ console.log(displayEmployeeShifts(employees[0]));
 
 // Task 3: Create a Function to Assign a New Shift
 function assignShift(name,day,hours) {
-let found = employees.find(name => employees.name === name);
-let available = employees.some(day => employees.day != day);
-if (found && available)
-    return {name:name,day:day,hours:hours}
-else
-return "error unable to assign"
+    if(employees.name === name && employees.day === day) {
+    return "error unable to assign" }
+    else
+    return {day: day,hours: hours} 
 }
-console.log(employees.push(assignShift('John','Tuesday',4)))
+console.log(employees.push(assignShift('John','Tuesday',4))) //Output: adds shift to array
 
 //Task 4: Create a Function to Calculate Total Hours Worked
 function calculateTotalHours(employee) {
-let totalHours = employee.shifts.hours;
-let employeeHours = totalHours.reduce((total,hour) => total + hour,0); 
-return employeeHours 
+return employee,employeeHours 
 }
-//console.log(calculateTotalHours('Sara'))
+employeeHours = 0;
+for (let i = 0; i < employees.length; i++) {
+
+  employeeHours += employees[i].hours;
+}
+console.log(calculateTotalHours('John')) //Output: is NAN 
+
+//Task 5: Create a Function to List Employees with Free Days
+function listAvailableEmployees(day) {
+    if(employees.some(employee => day === employees.day))
+    return "employees are not available" 
+else
+return employees.name
+}
+console.log(listAvailableEmployees('Monday')); //Output: is undefined
