@@ -15,9 +15,19 @@ console.log(displayEmployeeShifts(employees[0]));
 
 // Task 3: Create a Function to Assign a New Shift
 function assignShift(name,day,hours) {
-if(employees.some(name => employees.name === name && employees.day != day))
-    return name,day,hours
-else 
-return "error cannot assign"
+let found = employees.find(name => employees.name === name);
+let available = employees.some(day => employees.day != day);
+if (found && available)
+    return {name:name,day:day,hours:hours}
+else
+return "error unable to assign"
 }
-console.log(employees.push(assignShift('John','Tuesday',3))) //Output: does not give proper output
+console.log(employees.push(assignShift('John','Tuesday',4)))
+
+//Task 4: Create a Function to Calculate Total Hours Worked
+function calculateTotalHours(employee) {
+let totalHours = employee.shifts.hours;
+let employeeHours = totalHours.reduce((total,hour) => total + hour,0); 
+return employeeHours 
+}
+//console.log(calculateTotalHours('Sara'))
