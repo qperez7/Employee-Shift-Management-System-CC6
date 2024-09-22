@@ -17,10 +17,9 @@ console.log(displayEmployeeShifts(employees[3])); // Output: Displays employee d
 
 // Task 3: Create a Function to Assign a New Shift
 function assignShift(name,days,hours) {
-//let employeeShifts = employees.shifts
-//employees.some((employee) => {
+
    if( employees.find(employee => employee.shifts.some(day => day === days)))
-    //if(employees.shifts === day) {
+    
     return "cannot assign shift" 
     else 
     return {day:days,hours:hours}
